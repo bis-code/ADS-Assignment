@@ -1,3 +1,5 @@
+package stack;
+
 import java.util.EmptyStackException;
 
 public class LinkedStack<T> implements Stack<T>{
@@ -14,12 +16,19 @@ public class LinkedStack<T> implements Stack<T>{
     }
 
     @Override
-    public void push(T element) {
+    public void push(Object element) {
         list.addToFront(element);
     }
 
     @Override
-    public T pop() throws EmptyStackException {
-        return list.removeFirst();
+    public Object pop() throws EmptyStackException {
+        try{
+            return list.removeFirst();
+        }
+        catch (EmptyListException e)
+        {
+            e.printStackTrace();
+        }
+        return null;
     }
 }

@@ -1,12 +1,8 @@
+package stack;
+
 public class Node<T>{
     private T data;
     private Node node;
-
-    public Node()
-    {
-        data = ; //todo
-        node = new Node();
-    }
 
     public void setData(T data)
     {
